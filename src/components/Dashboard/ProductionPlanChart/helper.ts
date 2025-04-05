@@ -2,16 +2,6 @@ import { ChartOptions } from "chart.js";
 
 export const options: ChartOptions<"bar"> = {
   plugins: {
-    title: {
-      display: true,
-      text: "Cái",
-      align: "start",
-      position: "top",
-    },
-    subtitle: {
-      display: true,
-      text: "123",
-    },
     tooltip: {
       position: "nearest",
       padding: {
