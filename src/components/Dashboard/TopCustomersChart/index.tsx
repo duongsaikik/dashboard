@@ -2,7 +2,6 @@ import {
   BarElement,
   CategoryScale,
   Chart as ChartJS,
-  ChartOptions,
   Legend,
   LinearScale,
   Title,
@@ -10,8 +9,9 @@ import {
 } from "chart.js";
 import React from "react";
 import { Bar } from "react-chartjs-2";
-import { Customer } from "../../types";
-import CustomDatePicker from "../common/DatePicker";
+import { Customer } from "../../../types";
+import CustomDatePicker from "../../common/DatePicker";
+import { options } from "./helpers";
 
 ChartJS.register(
   CategoryScale,
@@ -38,23 +38,6 @@ const TopCustomersChart: React.FC<TopCustomersChartProps> = ({ data }) => {
         borderRadius: 5,
       },
     ],
-  };
-
-  const options: ChartOptions<"bar"> = {
-    indexAxis: "y",
-    scales: {
-      x: {
-        beginAtZero: true,
-      },
-    },
-    plugins: {
-      legend: {
-        display: false,
-      },
-      datalabels: {
-        display: false,
-      },
-    },
   };
 
   return (

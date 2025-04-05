@@ -42,7 +42,7 @@ const ProductionStatusChart: React.FC<ProductionStatusChartProps> = ({
     return (
       <div
         key={status.label}
-        className="min-w-[176px] w-full lg:w-[176px] flex items-start flex-col border-[1px] border-[#DDDDE2] rounded-[8px] p-[8px]"
+        className="min-w-[176px] w-full xl:w-[176px] flex items-start flex-col border-[1px] border-[#DDDDE2] rounded-[8px] p-[8px]"
       >
         <span className={cn("text-[24px] font-[600]", status.color)}>
           {status.data}
@@ -51,6 +51,7 @@ const ProductionStatusChart: React.FC<ProductionStatusChartProps> = ({
       </div>
     );
   };
+
   return (
     <div className="bg-white p-[0_24px_24px_24px] rounded-lg shadow">
       <div className="flex justify-between items-center py-[30px]">

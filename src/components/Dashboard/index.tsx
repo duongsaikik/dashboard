@@ -9,7 +9,7 @@ import ProductionProgress from "./ProductionProgress";
 import RequiredMaterials from "./RequiredMaterials";
 import TopCustomersChart from "./TopCustomersChart";
 import TopProducts from "./TopProducts";
-import loading from '../../assets/loading.svg';
+import loading from "../../assets/loading.svg";
 
 const Dashboard: React.FC = () => {
   const [data, setData] = useState<DashboardData | null>(null);
@@ -30,7 +30,7 @@ const Dashboard: React.FC = () => {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center h-screen">
-       <img src={loading}/>
+        <img src={loading} />
       </div>
     );
   }

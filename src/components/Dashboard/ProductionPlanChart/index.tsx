@@ -10,8 +10,9 @@ import {
   Legend,
   ChartOptions,
 } from "chart.js";
-import { ProductionPlan } from "../../types";
-import CustomDatePicker from "../common/DatePicker";
+import { ProductionPlan } from "../../../types";
+import CustomDatePicker from "../../common/DatePicker";
+import { options } from "./helper";
 
 ChartJS.register(
   CategoryScale,
@@ -49,65 +50,6 @@ const ProductionPlanChart: React.FC<ProductionPlanChartProps> = ({ data }) => {
         borderColor: "#fff",
       },
     ],
-  };
-
-  const options: ChartOptions<"bar"> = {
-    scales: {
-      x: {
-        display: true,
-        title: {
-          display: true,
-        },
-      },
-      y: {
-        display: true,
-        title: {
-          display: true,
-          text: "Value",
-          align: "start",
-        },
-      },
-    },
-    plugins: {
-      title: {
-        display: true,
-        text: "Chart Title",
-        align: "start",
-      },
-      subtitle: {
-        display: true,
-        text: "123",
-      },
-      tooltip: {
-        position: "nearest",
-        padding: {
-          bottom: 8,
-          top: 8,
-          right: 16,
-          left: 16,
-        },
-        callbacks: {
-          label() {
-            return "";
-          },
-          title: (tooltipItems) => {
-            const tooltipItem = tooltipItems[0];
-            const label = tooltipItem.raw || "";
-            return `${label} cái`;
-          },
-        },
-      },
-      legend: {
-        labels: {
-          pointStyle: "star",
-        },
-        position: "top",
-        align: "end",
-      },
-      datalabels: {
-        display: false,
-      },
-    },
   };
 
   return (

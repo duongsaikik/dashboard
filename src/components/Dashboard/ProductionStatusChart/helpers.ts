@@ -1,6 +1,6 @@
 import { isEmpty } from "@/common/utils";
 import { ProductionStatus } from "@/types";
-import { ChartData, ChartOptions } from "chart.js";
+import { ChartOptions } from "chart.js";
 
 export const chartData = (data?: ProductionStatus) => {
   return {
