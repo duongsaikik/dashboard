@@ -36,7 +36,7 @@ const Dashboard: React.FC = () => {
   }
 
   return (
-    <div className="p-[44px] bg-white w-full">
+    <div className="p-[22px] sm:p-[44px] bg-white w-full">
       <Header />
       <div className="pt-[34px]">
         <TopProducts products={data?.topProducts} />

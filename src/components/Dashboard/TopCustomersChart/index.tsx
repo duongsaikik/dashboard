@@ -12,6 +12,7 @@ import { Bar } from "react-chartjs-2";
 import { Customer } from "../../../types";
 import CustomDatePicker from "../../common/DatePicker";
 import { options } from "./helpers";
+import Container from "@/components/common/Container";
 
 ChartJS.register(
   CategoryScale,
@@ -41,19 +42,18 @@ const TopCustomersChart: React.FC<TopCustomersChartProps> = ({ data }) => {
   };
 
   return (
-    <div className="bg-white p-[0_24px_24px_24px] rounded-lg shadow">
-      <div className="flex justify-between items-center py-[30px]">
-        <h2 className="text-lg font-semibold">
-          Top 5 Khách Hàng Có Số Lượng Nhiều Nhất
-        </h2>
+    <Container
+      title="Top 5 Khách Hàng Có Số Lượng Nhiều Nhất"
+      filter={
         <CustomDatePicker
           placeholder="Năm nay"
           views={["year"]}
           format="YYYY"
         />
-      </div>
+      }
+    >
       <Bar data={chartData} options={options} />
-    </div>
+    </Container>
   );
 };
 

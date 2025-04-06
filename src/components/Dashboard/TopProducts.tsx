@@ -41,7 +41,7 @@ const TopProducts: React.FC<TopProductsProps> = ({ products }) => {
 
   return (
     <div className="mt-6">
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex flex-wrap justify-between items-start sm:items-center py-[30px] sm:flex-row flex-col">
         <h2 className="text-lg font-semibold">
           Top Sản Phẩm Sản Xuất Nhiều Nhất
         </h2>
@@ -51,7 +51,7 @@ const TopProducts: React.FC<TopProductsProps> = ({ products }) => {
           format="MM"
         />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {!isEmpty(products)
           ? products?.map(renderProduct)
           : (Array.from({ length: 5 }) as Product[]).map(renderProduct)}

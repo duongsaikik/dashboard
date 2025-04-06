@@ -22,7 +22,7 @@ const RequiredMaterials: React.FC<RecentActivitiesProps> = ({ materials }) => {
 
   return (
     <div className="bg-white rounded-lg shadow overflow-auto relative">
-      <div className="flex justify-between items-center p-[30px_24px]">
+      <div className="p-[0_24px_24px_24px] flex flex-wrap justify-between items-start sm:items-center py-[30px] sm:flex-row flex-col">
         <span className="text-[18px] font-[500]">Nguyên Vật Liệu Cần Mua</span>
         <MuiDatePicker />
       </div>

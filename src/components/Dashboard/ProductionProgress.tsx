@@ -3,6 +3,7 @@ import { ProductionProgressData } from "../../types";
 import CustomSelect from "../common/Select";
 import { isEmpty } from "@/common/utils";
 import { NO_DATA } from "@/common/constant";
+import Container from "../common/Container";
 
 type ProductionProgressProps = {
   data?: ProductionProgressData[];
@@ -32,11 +33,9 @@ const ProductionProgress: React.FC<ProductionProgressProps> = ({ data }) => {
   );
 
   return (
-    <div className="bg-white p-[0_24px_24px_24px] rounded-lg shadow">
-      <div className="flex justify-between items-center py-[30px]">
-        <span className="text-[18px] font-[500]">
-          Tiến Độ Sản Xuất Theo Nhóm
-        </span>
+    <Container
+      title="Tiến Độ Sản Xuất Theo Nhóm"
+      filter={
         <CustomSelect
           options={[
             {
@@ -45,7 +44,8 @@ const ProductionProgress: React.FC<ProductionProgressProps> = ({ data }) => {
             },
           ]}
         />
-      </div>
+      }
+    >
       <div className="flex flex-col gap-[32px]">
         {!isEmpty(data)
           ? data?.map(renderProduct)
@@ -53,7 +53,7 @@ const ProductionProgress: React.FC<ProductionProgressProps> = ({ data }) => {
               renderProduct
             )}
       </div>
-    </div>
+    </Container>
   );
 };
 

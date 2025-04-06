@@ -20,6 +20,7 @@ import {
   status,
 } from "./helpers";
 import { cn, isEmpty } from "@/common/utils";
+import Container from "@/components/common/Container";
 
 ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
@@ -53,11 +54,10 @@ const ProductionStatusChart: React.FC<ProductionStatusChartProps> = ({
   };
 
   return (
-    <div className="bg-white p-[0_24px_24px_24px] rounded-lg shadow">
-      <div className="flex justify-between items-center py-[30px]">
-        <span className="text-[18px] font-[500]">Tình Hình Sản Xuất</span>
-        <CustomDatePicker placeholder="Hôm nay" />
-      </div>
+    <Container
+      title="Tình Hình Sản Xuất"
+      filter={<CustomDatePicker placeholder="Hôm nay" />}
+    >
       <Doughnut
         ref={chartRef}
         data={chartData(data)}
@@ -65,12 +65,12 @@ const ProductionStatusChart: React.FC<ProductionStatusChartProps> = ({
         plugins={[centerTextPlugin(data)].concat(
           !isEmpty(data) ? [] : [fixedSegmentsPlugin]
         )}
-        className="!w-full lg:!size-[268px] mx-auto my-[67px]"
+        className="!w-full lg:!size-[268px] mx-auto my-[20px] lg:my-[67px]"
       />
       <div className="flex justify-around flex-wrap text-sm gap-[4px]">
         {status(data)?.map(renderStatus)}
       </div>
-    </div>
+    </Container>
   );
 };
 

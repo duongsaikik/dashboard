@@ -13,6 +13,7 @@ import {
 import { ProductionPlan } from "../../../types";
 import CustomDatePicker from "../../common/DatePicker";
 import { options } from "./helper";
+import Container from "@/components/common/Container";
 
 ChartJS.register(
   CategoryScale,
@@ -53,13 +54,12 @@ const ProductionPlanChart: React.FC<ProductionPlanChartProps> = ({ data }) => {
   };
 
   return (
-    <div className="bg-white p-[0_24px_24px_24px] rounded-lg shadow">
-      <div className="flex justify-between items-center py-[30px]">
-        <h2 className="text-lg font-semibold">Kế Hoạch Sản Xuất</h2>
-        <CustomDatePicker placeholder="Quý này" />
-      </div>
+    <Container
+      title="Kế Hoạch Sản Xuất"
+      filter={<CustomDatePicker placeholder="Quý này" />}
+    >
       <Bar data={chartData} options={options} />
-    </div>
+    </Container>
   );
 };
 

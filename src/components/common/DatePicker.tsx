@@ -140,7 +140,7 @@ const CustomDatePicker: React.FC<Props> = ({
             }}
           >
             <FiCalendar size={16} />
-            <span className="text-[16px] text-[#3A3E4C]">{selectedDate ? selectedDate.format(format) : placeholder}</span>
+            <span className="text-[16px] text-[#3A3E4C] whitespace-nowrap">{selectedDate ? selectedDate.format(format) : placeholder}</span>
             <FiChevronDown size={16} />
           </Button>
 
